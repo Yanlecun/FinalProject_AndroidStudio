@@ -10,9 +10,10 @@
     <style name="button">
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:layout_width">115dp</item>
-        <item name="android:layout_height">37dp</item>
+        <item name="android:layout_width">125dp</item>
+        <item name="android:layout_height">45dp</item>
         <item name="android:textColor">#000</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
 </resources>

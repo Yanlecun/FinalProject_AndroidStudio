@@ -6,13 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--        Time keeping track of position-->
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="83dp"
         android:gravity="center"
-        android:text="Time keeping track of position"
+        android:text="@string/main_name"
+
         android:textSize="25sp"
+        android:textColor="#000"
         android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,7 +27,7 @@
 
     <TextView
         android:id="@+id/start"
-        android:text="start"
+        android:text="@string/main_start_btn"
         style="@style/button"
         android:background="@drawable/button_shape"
 
@@ -40,13 +43,14 @@
         android:id="@+id/list"
 
         style="@style/button"
-        android:layout_marginBottom="172dp"
+        android:layout_marginBottom="48dp"
         android:background="@drawable/button_shape"
 
-        android:text="list"
+        android:text="@string/main_list_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/start"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintVertical_bias="0.456" />
 </androidx.constraintlayout.widget.ConstraintLayout>

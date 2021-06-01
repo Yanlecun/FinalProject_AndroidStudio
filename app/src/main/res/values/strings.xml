@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">FinalProject</string>
 
+    <string name="main_start_btn">start</string>
+    <string name="main_list_btn">list</string>
+    <string name="main_name">앱 제목</string>
 
 </resources>
