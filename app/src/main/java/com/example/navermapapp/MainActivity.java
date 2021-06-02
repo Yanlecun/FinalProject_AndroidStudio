@@ -8,26 +8,20 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView st, li;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
-        st = findViewById(R.id.start);
-        li = findViewById(R.id.list);
 
-        st.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    public void onClickStart(View v) {
+        Intent it = new Intent(getApplicationContext(), AddActivity.class);
+        startActivity(it);
+    }
 
-            }
-        });
-        li.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+    public void onClickList(View v) {
+        Intent it = new Intent(getApplicationContext(), ListActivity.class);
+        startActivity(it);
     }
 }

@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="83dp"
         android:gravity="center"
-        android:text="@string/main_name"
+        android:text="@string/main_text_name"
 
         android:textSize="25sp"
         android:textColor="#000"
@@ -25,11 +25,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.278" />
 
-    <TextView
+    <Button
         android:id="@+id/start"
-        android:text="@string/main_start_btn"
+        android:text="@string/main_btn_start"
         style="@style/button"
         android:background="@drawable/button_shape"
+        android:onClick="onClickStart"
 
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,14 +40,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.227" />
 
-    <TextView
+    <Button
         android:id="@+id/list"
 
         style="@style/button"
         android:layout_marginBottom="48dp"
         android:background="@drawable/button_shape"
+        android:onClick="onClickList"
 
-        android:text="@string/main_list_btn"
+        android:text="@string/main_btn_list"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
