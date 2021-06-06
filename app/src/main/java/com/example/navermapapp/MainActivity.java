@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -14,14 +13,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
     public void onClickStart(View v) {
-        Intent it = new Intent(getApplicationContext(), AddActivity.class);
-        startActivity(it);
-    }
-
-    public void onClickList(View v) {
-        Intent it = new Intent(getApplicationContext(), ListActivity.class);
+        Intent it = new Intent(getApplicationContext(), RestaurantSearchActivity.class);
         startActivity(it);
     }
 }

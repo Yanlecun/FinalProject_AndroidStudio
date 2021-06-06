@@ -19,10 +19,8 @@
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="oqzjezkxwo" />
 
-        <activity android:name=".ResultListActivity"></activity>
-        <activity android:name=".SearchActivity" />
-        <activity android:name=".AddActivity" />
-        <activity android:name=".ListActivity" />
+        <activity android:name=".RestaurantSearchActivity" />
+        <activity android:name=".RestaurantInfoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

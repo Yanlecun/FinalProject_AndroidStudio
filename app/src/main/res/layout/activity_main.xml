@@ -40,19 +40,4 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.227" />
 
-    <Button
-        android:id="@+id/list"
-
-        style="@style/button"
-        android:layout_marginBottom="48dp"
-        android:background="@drawable/button_shape"
-        android:onClick="onClickList"
-
-        android:text="@string/main_btn_list"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/start"
-        app:layout_constraintVertical_bias="0.456" />
 </androidx.constraintlayout.widget.ConstraintLayout>

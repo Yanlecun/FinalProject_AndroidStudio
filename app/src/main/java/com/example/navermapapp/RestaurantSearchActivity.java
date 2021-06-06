@@ -1,44 +1,30 @@
 package com.example.navermapapp;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
 import android.os.Bundle;
-import android.os.Looper;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationResult;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.CameraUpdate;
 import com.naver.maps.map.MapFragment;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
-import com.naver.maps.map.overlay.InfoWindow;
 import com.naver.maps.map.overlay.Marker;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class SearchActivity extends FragmentActivity implements OnMapReadyCallback {
+public class RestaurantSearchActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private EditText mEditText ;
     private String insert_loc ;
@@ -55,7 +41,7 @@ public class SearchActivity extends FragmentActivity implements OnMapReadyCallba
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_restaurant_search);
 
         mEditText = findViewById(R.id.searchText);
 
@@ -188,7 +174,7 @@ public class SearchActivity extends FragmentActivity implements OnMapReadyCallba
 
 
     public void onClickComplete(View v) {
-        Intent it = new Intent(getApplicationContext(), AddActivity.class);
+        Intent it = new Intent(getApplicationContext(), RestaurantInfoActivity.class);
 
         it.putExtra("name", insert_loc);
         it.putExtra("LatLng", latLng);

@@ -3,6 +3,7 @@ package com.example.navermapapp;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,7 @@ import com.naver.maps.geometry.LatLng;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class AddActivity extends AppCompatActivity {
+public class RestaurantInfoActivity extends AppCompatActivity {
     private ListView mListView ;
     private SimpleAdapter mSimpleAdapter;
     private ArrayList<HashMap<String,String>> mListData;
@@ -26,7 +27,7 @@ public class AddActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add);
+        setContentView(R.layout.activity_restaurant_info);
 
         mListData = new ArrayList<>();
         mSimpleAdapter = new SimpleAdapter(this, mListData, R.layout.my_list_item
@@ -47,7 +48,7 @@ public class AddActivity extends AppCompatActivity {
 
     // 지역명 검색해서 위도, 경도, 이름 값 받아오기
     public void onClickAdd(View v) {
-        Intent it = new Intent(getApplicationContext(), SearchActivity.class);
+        Intent it = new Intent(getApplicationContext(), RestaurantSearchActivity.class);
         startActivityForResult(it, 200);
     }
 
@@ -80,7 +81,6 @@ public class AddActivity extends AppCompatActivity {
 
     public void onClickComplete(View v) {
         Intent it = new Intent(getApplicationContext(), ListActivity.class);
-        // 두 개 이상 선택 안 했을 시 완성버튼 x
         if(mListData.size() < 3) {
             Toast.makeText(getApplicationContext(), "최소 2개 이상 목적지를 추가해주세요", Toast.LENGTH_SHORT).show();
             return ;
