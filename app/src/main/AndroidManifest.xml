@@ -17,7 +17,7 @@
 
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
-            android:value="sve4gq6qbn" />
+            android:value="oqzjezkxwo" />
 
         <activity android:name=".ResultListActivity"></activity>
         <activity android:name=".SearchActivity" />

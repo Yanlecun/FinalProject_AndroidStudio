@@ -54,8 +54,16 @@ public class ListActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        // 목적지 리스트 추가 액티비티에서 온 요청
         if(requestCode != 200)
             return;
+        // ArrayList 객체 가져오기
+        ArrayList<HashMap<String,String>> arrayList = data.getExtras().getParcelable("data"); // (ArrayList<HashMap<String,String>>)
+
+
+
+
 
     }
 }

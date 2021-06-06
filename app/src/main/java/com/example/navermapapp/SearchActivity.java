@@ -159,7 +159,9 @@ public class SearchActivity extends FragmentActivity implements OnMapReadyCallba
         List<Address> list = null;
 
         try {
+
             list = geocoder.getFromLocationName(insert_loc, 5); //들어갈 부분 검색
+
         } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(getApplicationContext(), "주소 변환 오류", Toast.LENGTH_SHORT).show();
@@ -209,6 +211,5 @@ public class SearchActivity extends FragmentActivity implements OnMapReadyCallba
         mEditText.setText("");
         // search버튼 누르면 지도에 내가 검색한 위치 뜨게하기
         // 처음에 지도는 그냥 기본 위치로 지정
-
     }
 }
