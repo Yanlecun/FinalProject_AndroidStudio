@@ -90,6 +90,8 @@ public class RestaurantInfoActivity extends AppCompatActivity {
         it.putExtra("data", mListData);
         setResult(RESULT_OK,it);
         finish();
+
+
     }
 
     public void onClickCancel(View v) {
