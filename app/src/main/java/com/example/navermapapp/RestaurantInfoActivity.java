@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.naver.maps.geometry.LatLng;
@@ -36,7 +37,7 @@ public class RestaurantInfoActivity extends FragmentActivity implements OnMapRea
 
     Marker marker;
     LatLng latLng = new LatLng(37.5796, 126.9770);
-
+    String name ;
     private int id = 0;
 
     @Override
@@ -45,8 +46,16 @@ public class RestaurantInfoActivity extends FragmentActivity implements OnMapRea
         setContentView(R.layout.activity_restaurant_info);
 
         // Intent로 값들 가져오기 + textView text지정하기
-        Intent it = getIntent();
+        Bundle data = getIntent().getExtras();
+        Restaurant res = (Restaurant) data.getParcelable("restaurant");
 
+        TextView textViews[] = { findViewById(R.id.res_address), findViewById(R.id.res_name), findViewById(R.id.res_call), findViewById(R.id.res_gubun), findViewById(R.id.res_gubun_detail)};
+        String str[] = {res.getAddress(), res.getName(), res.getCall(), res.getGubun(), res.getGubunDetail()};
+        int i =0;
+        for(TextView tv : textViews) {
+            tv.setText(str[i++]);
+        }
+        name = str[1];
 
         // id에 해당하는 fragment 가져오기
         mapFragment = (MapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
@@ -65,11 +74,13 @@ public class RestaurantInfoActivity extends FragmentActivity implements OnMapRea
         mNaverMap.moveCamera(CameraUpdate.zoomTo(15)); // 얼마만큼 확대 축소 할 것인지 ?
 
         mNaverMap.moveCamera(CameraUpdate.scrollTo(latLng)); //시작 지점
-        setMapPos("경복궁"); //사용자 클릭 장소
+        // 인자로 위치 넣어서 지도 위치 변경하기
+        setMapPos(name);
     }
 
     public void setMapPos(String insert_loc) {
         Geocoder geocoder = new Geocoder(  this, Locale.KOREA);
+        System.out.println(insert_loc);
         List<Address> list = null;
 
         try {

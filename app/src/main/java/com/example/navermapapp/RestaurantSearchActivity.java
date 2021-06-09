@@ -9,6 +9,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -35,6 +36,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -56,12 +59,16 @@ public class RestaurantSearchActivity extends AppCompatActivity {
     private ArrayList<HashMap<String,String>> mListData;
     private int mISelectedItem = -1;
 
+    // 인텐트 이동시 사용하는 array
+    private ArrayList<Restaurant> mListRest;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_search);
 
         mListData = new ArrayList<>();
+        mListRest = new ArrayList<>();
 
         mEditText = findViewById(R.id.searchText1);
 
@@ -75,7 +82,14 @@ public class RestaurantSearchActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 mISelectedItem = position;
                 if(mListData.size() > 0) {
-                    Toast.makeText(getApplicationContext(), mISelectedItem, Toast.LENGTH_SHORT).show();
+                    if(mISelectedItem >-1) {
+                        Intent it = new Intent(getApplicationContext(), RestaurantInfoActivity.class);
+                        Restaurant res = mListRest.get(mISelectedItem);
+
+                        it.putExtra("restaurant",new Restaurant(res.getAddress(), res.getName(), res.getCall(), res.getGubun(), res.getGubunDetail()));
+
+                        startActivityForResult(it,200);
+                    }
                 }
             }
         });
@@ -150,6 +164,7 @@ public class RestaurantSearchActivity extends AppCompatActivity {
                 // 이전 검색 기록 지우기
                 if(!mListData.isEmpty()) {
                     mListData.removeAll(mListData);
+                    mListRest.removeAll(mListRest);
                 }
                 for(int i =0; i < restaurants.size(); i++) {
                     JsonObject restaurant = (JsonObject)restaurants.get(i);
@@ -175,6 +190,7 @@ public class RestaurantSearchActivity extends AppCompatActivity {
 
 
                     mListData.add(hitem);
+                    mListRest.add(res_obj);
                     mSimpleAdapter.notifyDataSetChanged();
                 }
             }
