@@ -9,14 +9,21 @@
     <ListView
         android:id="@+id/list"
         android:layout_width="0dp"
-        android:layout_height="461dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="8dp"
+
+        android:choiceMode="singleChoice"
+        android:divider="#2f5752"
+        android:dividerHeight="1dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:fastScrollEnabled="true"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="0.955"></ListView>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="1.0"></ListView>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -31,7 +38,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_home"
             style="@style/button_home"
             android:layout_width="0dp"
             android:layout_height="50dp"
@@ -62,7 +69,7 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="50dp"
             android:layout_weight="4"
             android:orientation="vertical">
 
@@ -72,16 +79,6 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:hint="시를 입력해주세요(고양시 ,..)"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/searchText2"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:hint="검색할 위치 입력"
-
-
                 android:inputType="text" />
 
         </LinearLayout>
