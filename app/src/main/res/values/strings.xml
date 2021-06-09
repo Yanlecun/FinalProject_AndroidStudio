@@ -4,7 +4,7 @@
     <string name="main_text_name">환영합니다!</string>
     <string name="main_btn_start">검색하기</string>
 
-    <string name="search_text_subject">안심식당 검색</string>
+    <string name="search_text_subject">경기도 안심식당 검색</string>
     <string name="search_btn_home">홈으로</string>
     <string name="search_btn_search">검색</string>
 

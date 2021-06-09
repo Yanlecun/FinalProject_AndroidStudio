@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#b1b1b1</item>
         <item name="colorPrimaryDark">#DFEFF0</item>
@@ -48,5 +48,10 @@
 
     <style name="ListText">
         <item name="android:gravity">center</item>
+    </style>
+
+    <style name="MainText">
+        <item name="android:textColor">@color/color1</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>
