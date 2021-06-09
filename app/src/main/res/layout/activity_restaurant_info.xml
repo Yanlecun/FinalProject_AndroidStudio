@@ -35,32 +35,91 @@
             android:text="@string/info_text_subject" />
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/list"
+    <fragment
+        android:id="@+id/map"
+        android:name="com.naver.maps.map.MapFragment"
         android:layout_width="0dp"
-        android:layout_height="461dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="313dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="0.0">
-
-    </ListView>
+        app:layout_constraintVertical_bias="0.741" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_call"
+        style="@style/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
         android:layout_marginBottom="16dp"
         android:text="@string/info_btn_call"
-        style="@style/button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.871"
+        app:layout_constraintHorizontal_bias="0.941"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list" />
+        app:layout_constraintTop_toBottomOf="@+id/map"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.32">
+
+        <TextView
+            android:id="@+id/res_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="사업장명" />
+
+        <TextView
+            android:id="@+id/res_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="주소1" />
+
+        <TextView
+            android:id="@+id/res_call"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="전화번호"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/res_gubun_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="업종상세" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/res_deg_dt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="안심식당 지정일" />
+
+            <TextView
+                android:id="@+id/res_cncl_dt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="안심식당 취소일" />
+        </LinearLayout>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

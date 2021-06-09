@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".RestaurantSearchActivity">
 
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="0dp"
+        android:layout_height="461dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.955"></ListView>
+
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="0dp"
@@ -35,17 +47,7 @@
             android:text="@string/search_text_subject" />
     </LinearLayout>
 
-    <fragment
-        android:id="@+id/map"
-        android:name="com.naver.maps.map.MapFragment"
-        android:layout_width="0dp"
-        android:layout_height="476dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="1.0" />
+
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -85,7 +87,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btn_search"
             style="@style/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
