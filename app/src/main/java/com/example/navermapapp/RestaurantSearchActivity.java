@@ -78,7 +78,6 @@ public class RestaurantSearchActivity extends AppCompatActivity {
 
         // https://stackoverflow.com/questions/16133706/push-listview-when-keyboard-appears-without-adjustpan
         mListView.setTranscriptMode(ListView.TRANSCRIPT_MODE_NORMAL);
-        mListView.setStackFromBottom(true);
 
         mListView.setAdapter(mSimpleAdapter);
 
@@ -157,9 +156,8 @@ public class RestaurantSearchActivity extends AppCompatActivity {
                 JsonArray restaurants = (JsonArray)jsonObject2.get("row");
 
                 if(restaurants == null ) {
-                    Toast.makeText(getApplicationContext(), "근처에 안심 음식점이 없거나 찾지못했습니다.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "안심 음식점이 없거나 찾지못했습니다.", Toast.LENGTH_LONG).show();
                     return ;
-
                 }
                 // 이전 검색 기록 지우기
                 if(!mListData.isEmpty()) {

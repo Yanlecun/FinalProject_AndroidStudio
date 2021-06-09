@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">20185046김송우</string>
+    <string name="app_name">경기도 코로나 안심식당</string>
 
-    <string name="main_text_name">앱 제목</string>
+    <string name="main_text_name">환영합니다!</string>
     <string name="main_btn_start">검색하기</string>
 
     <string name="search_text_subject">안심식당 검색</string>
