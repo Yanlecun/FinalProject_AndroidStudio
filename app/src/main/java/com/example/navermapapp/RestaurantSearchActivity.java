@@ -75,6 +75,11 @@ public class RestaurantSearchActivity extends AppCompatActivity {
         mSimpleAdapter = new SimpleAdapter(this, mListData, R.layout.my_list_item
                 ,new String[] {"name","address","gubun_detail"}, new int[] {R.id.text1, R.id.text2, R.id.text3});
         mListView = findViewById(R.id.list);
+
+        // https://stackoverflow.com/questions/16133706/push-listview-when-keyboard-appears-without-adjustpan
+        mListView.setTranscriptMode(ListView.TRANSCRIPT_MODE_NORMAL);
+        mListView.setStackFromBottom(true);
+
         mListView.setAdapter(mSimpleAdapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -150,11 +155,6 @@ public class RestaurantSearchActivity extends AppCompatActivity {
                 JsonObject jsonObject1 = (JsonObject)JsonParser.parseString(s);
                 JsonObject jsonObject2 = (JsonObject)jsonObject1.get("Grid_20200713000000000605_1");
                 JsonArray restaurants = (JsonArray)jsonObject2.get("row");
-
-//                JsonObject jo = (JsonObject)restaurants.get(0);
-//                JsonElement je = jo.get("RELAX_ADD1");
-//                String test = je.getAsString();
-//                System.out.println(test);
 
                 if(restaurants == null ) {
                     Toast.makeText(getApplicationContext(), "근처에 안심 음식점이 없거나 찾지못했습니다.", Toast.LENGTH_LONG).show();

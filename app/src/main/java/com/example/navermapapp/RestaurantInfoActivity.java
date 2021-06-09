@@ -7,9 +7,11 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.app.Notification;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -37,7 +39,9 @@ public class RestaurantInfoActivity extends FragmentActivity implements OnMapRea
 
     Marker marker;
     LatLng latLng = new LatLng(37.5796, 126.9770);
+    Restaurant res;
     String name ;
+    String call;
     private int id = 0;
 
     @Override
@@ -47,15 +51,18 @@ public class RestaurantInfoActivity extends FragmentActivity implements OnMapRea
 
         // Intent로 값들 가져오기 + textView text지정하기
         Bundle data = getIntent().getExtras();
-        Restaurant res = (Restaurant) data.getParcelable("restaurant");
+        res = (Restaurant) data.getParcelable("restaurant");
 
+        name = res.getName();
+        call = res.getCall();
         TextView textViews[] = { findViewById(R.id.res_address), findViewById(R.id.res_name), findViewById(R.id.res_call), findViewById(R.id.res_gubun), findViewById(R.id.res_gubun_detail)};
         String str[] = {res.getAddress(), res.getName(), res.getCall(), res.getGubun(), res.getGubunDetail()};
-        int i =0;
+
+        int index = 0;
+
         for(TextView tv : textViews) {
-            tv.setText(str[i++]);
+            tv.setText(str[index++]);
         }
-        name = str[1];
 
         // id에 해당하는 fragment 가져오기
         mapFragment = (MapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
@@ -102,49 +109,26 @@ public class RestaurantInfoActivity extends FragmentActivity implements OnMapRea
         marker = new Marker();
         marker.setPosition(latLng);
         marker.setMap(mNaverMap);
-        marker.setCaptionText("검색한 위치");
+        marker.setCaptionText(name);
         marker.setCaptionOffset(-215);
         marker.setCaptionTextSize(15);
 
         mNaverMap.moveCamera(CameraUpdate.scrollTo(latLng)); // 드래그로 이동 가능하도록 하기
-        // 줌으로 보여기는 사이즈 조절하기
 
     }
 
-    // Marker 누르면 실행되는 메소드
-//    public void onClickMarker(View v) {
-//        Intent it = new Intent(getApplicationContext(), RestaurantInfoActivity.class);
-//
-//        it.putExtra("name", insert_loc);
-//        it.putExtra("LatLng", latLng);
-//
-//        setResult(RESULT_OK, it);
-//        finish();
-//    }
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-//        if(requestCode != 200 || resultCode != RESULT_OK) {
-//            Toast.makeText(getApplicationContext(),"추가하기 실패", Toast.LENGTH_SHORT).show();
-//            return ;
-//        }
-//        LatLng latLng = data.getExtras().getParcelable("LatLng");
-//
-//        HashMap<String, String> hashMap = new HashMap<>();
-//        hashMap.put("name", data.getStringExtra("name"));
-//        hashMap.put("id", String.valueOf(++id));
-//
-//        hashMap.put("lat", String.valueOf(latLng.latitude));
-//        hashMap.put("lng", String.valueOf(latLng.longitude));
-//
-//        mListData.add(hashMap);
-//        mSimpleAdapter.notifyDataSetChanged();
-    }
 
     public void onClickHome(View v) {
         Intent it = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(it);
+    }
+
+    // 전화걸기 버튼 누르면 해당 안심식당에 전화걸기
+    public void onClickCall(View v) {
+        // 전화번호 replacing
+        call = call.replaceAll("-/gi","");
+
+        Intent it = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+call));
         startActivity(it);
     }
 
@@ -154,47 +138,7 @@ public class RestaurantInfoActivity extends FragmentActivity implements OnMapRea
         startActivityForResult(it, 200);
     }
 
-//    public void onClickDel(View v) {
-//        if(mISelectedItem == -1)
-//            Toast.makeText(getApplicationContext(), "항목을 선택해주세요", Toast.LENGTH_SHORT).show();
-//
-//        // arraylist remove메소드로 삭제 + hashMap에서 id값 하나씩 땡기기
-//    }
 
-//    public void onClickComplete(View v) {
-//        Intent it = new Intent(getApplicationContext(), ListActivity.class);
-//        if(mListData.size() < 3) {
-//            Toast.makeText(getApplicationContext(), "최소 2개 이상 목적지를 추가해주세요", Toast.LENGTH_SHORT).show();
-//            return ;
-//        }
-//
-//        // 위도, 경도, 이름, id값 담은 hashMap ArrayList 넘기기
-//        it.putExtra("data", mListData);
-//        setResult(RESULT_OK,it);
-//        finish();
-//    }
-
-    // 지도 위치 변경 시 불려지는 메소드
-//    public void getRestaurant(LatLng latLng) {
-//        double lat,lng ;
-//
-//        Iterator<Restaurant> it = mRestList.iterator();
-//        while(it.hasNext()) {
-//            Restaurant res = it.next();
-//            lat = latLng.latitude - res.getLat();
-//            lng = latLng.longitude - res.getLng();
-//
-//            // 코로나 안심 음식점이 아닌 조건
-//            if(res.getCheck() != "Y" ) { // + Date 값 비교
-//                // lat 365 ~ -270  / lng 350 -360  + 만약 결괏값이 30개 이상이면 lat/lng 범위 줄이기
-//                if((lat < 0.365 || lat > -0.270) || (lng < 0.350 || lng > -0.360)) {
-//                    marker = new Marker();
-//                    marker.setPosition(latLng);
-//                    marker.setMap(mNaverMap);
-//                }
-//            }
-//        }
-//    }
 
 
 }

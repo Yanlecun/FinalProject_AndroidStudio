@@ -25,7 +25,8 @@
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="oqzjezkxwo" />
 
-        <activity android:name=".RestaurantSearchActivity" />
+        <activity android:name=".RestaurantSearchActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
         <activity android:name=".RestaurantInfoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
