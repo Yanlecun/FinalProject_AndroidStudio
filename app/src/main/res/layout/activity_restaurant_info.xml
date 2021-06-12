@@ -7,7 +7,11 @@
     tools:context=".RestaurantInfoActivity"
     android:background="@drawable/background"
     >
+    <!--    1) 직접 코딩-->
 
+    <!--    ======================================  -->
+    <!--    1) 전부 직접 코딩(수업 중 사용 코드 응용)  -->
+    <!--    ======================================  -->
     <fragment
         android:id="@+id/map"
         android:name="com.naver.maps.map.MapFragment"

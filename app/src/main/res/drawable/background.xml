@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--    1) 직접 코딩-->
     <solid android:color="#DFEFF0"></solid>
 </shape>

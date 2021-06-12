@@ -4,6 +4,9 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
 
+    <!--    ================  -->
+    <!--    1) 전부 직접 코딩  -->
+    <!--    ================  -->
     <color name="color1">#7D9C9F</color>
     <color name="color2">#BDD8DA</color>
     <color name="color3">#DFEFF0</color>

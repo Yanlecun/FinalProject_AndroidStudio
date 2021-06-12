@@ -20,6 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <!--  2) 출처 https://blog.naver.com/bb_/221645545193-->
+
         
         <activity android:name=".FirstActivity">
             <intent-filter>
@@ -32,7 +34,8 @@
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="oqzjezkxwo" />
-        <!-- https://stackoverflow.com/questions/17148426/pop-up-keyboard-destroys-my-listview/17148669 -->
+
+        <!-- 2) 출처 : https://stackoverflow.com/questions/17148426/pop-up-keyboard-destroys-my-listview/17148669 -->
         <activity
             android:name=".RestaurantSearchActivity"
             android:windowSoftInputMode="adjustNothing" />

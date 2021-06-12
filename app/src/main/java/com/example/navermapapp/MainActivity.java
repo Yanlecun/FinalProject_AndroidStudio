@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    // 1) 직접 코딩
     public void onClickStart(View v) {
         Intent it = new Intent(getApplicationContext(), RestaurantSearchActivity.class);
         startActivity(it);

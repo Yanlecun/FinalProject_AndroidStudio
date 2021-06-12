@@ -1,4 +1,7 @@
 <resources>
+    <!--    ================  -->
+    <!--    1) 전부 직접 코딩  -->
+    <!--    ================  -->
     <string name="app_name">경기도 코로나 안심식당</string>
 
     <string name="main_text_name">환영합니다!</string>

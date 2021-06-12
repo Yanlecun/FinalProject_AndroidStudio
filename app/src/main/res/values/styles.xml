@@ -1,14 +1,19 @@
 <resources>
-    <!-- Base application theme. -->
+    <!--    2) 출처 https://stackoverflow.com/questions/32727527/theme-appcompat-light-noactionbar-fullscreen-not-working-with-android-4-4 -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+        <!--    2) 출처 https://stackoverflow.com/questions/32727527/theme-appcompat-light-noactionbar-fullscreen-not-working-with-android-4-4 -->
+        <item name="android:windowFullscreen">true</item>
+        <!--    2) 출처 https://stackoverflow.com/questions/32727527/theme-appcompat-light-noactionbar-fullscreen-not-working-with-android-4-4 -->
+        <item name="android:windowContentOverlay">@null</item>
+
+        <!--    1) 직접 코딩-->
         <item name="colorPrimary">#b1b1b1</item>
         <item name="colorPrimaryDark">#DFEFF0</item>
         <item name="colorAccent">#AD235E</item>
 
     </style>
 
-
+    <!--    1) 직접 코딩-->
     <style name="button">
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
@@ -20,6 +25,7 @@
         <item name="android:background">#fff</item>
     </style>
 
+    <!--    1) 직접 코딩-->
     <style name="button_home">
         <item name="android:text">@string/btn_home</item>
         <item name="android:textSize">15sp</item>
@@ -29,7 +35,8 @@
         <item name="android:onClick">onClickHome</item>
         <item name="android:textStyle">bold</item>
     </style>
-    
+
+    <!--    1) 직접 코딩-->
     <style name="subject">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">60dp</item>
@@ -41,15 +48,18 @@
         <item name="android:textColor">#7D9C9F</item>
     </style>
 
+    <!--    1) 직접 코딩-->
     <style name="setText">
         <item name="android:gravity">center</item>
         <item name="android:textSize">13sp</item>
     </style>
 
+    <!--    1) 직접 코딩-->
     <style name="ListText">
         <item name="android:gravity">center</item>
     </style>
 
+    <!--    1) 직접 코딩-->
     <style name="MainText">
         <item name="android:textColor">@color/color1</item>
         <item name="android:textStyle">bold</item>

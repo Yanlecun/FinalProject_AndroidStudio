@@ -6,9 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".FirstActivity"
     android:onClick="onClickNext"
-
     >
+    <!--    1) 직접 코딩-->
 
+    <!--    ======================================  -->
+    <!--    1) 전부 직접 코딩  -->
+    <!--    ======================================  -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="1176dp"
@@ -44,8 +47,6 @@
         android:text="화면을 클릭해주세요"
         android:textColor="@color/color3"
         android:textStyle="bold"
-
-
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

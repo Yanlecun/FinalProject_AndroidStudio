@@ -13,6 +13,8 @@ public class FirstActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
     }
+
+    // 1) 직접 코딩
     public void onClickNext(View v){
         Intent it = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(it);
