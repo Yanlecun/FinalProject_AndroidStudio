@@ -30,7 +30,7 @@ public class Restaurant implements Parcelable {
         String[] data = new String[5];
 
         in.readStringArray(data);
-        // the order needs to be the same as in writeToParcel() method
+        // 1) 직접 코딩 - 출처 응용
         this.address = data[0];
         this.name = data[1];
         this.call = data[2];
@@ -62,7 +62,6 @@ public class Restaurant implements Parcelable {
         public Restaurant createFromParcel(Parcel in) {
             return new Restaurant(in);
         }
-
         public Restaurant[] newArray(int size) {
             return new Restaurant[size];
         }

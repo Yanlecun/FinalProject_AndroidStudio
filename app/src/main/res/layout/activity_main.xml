@@ -9,9 +9,9 @@
     >
     <!--    1) 직접 코딩-->
 
-    <!--    ======================================  -->
+    <!--    =====================  -->
     <!--    1) 전부 직접 코딩  -->
-    <!--    ======================================  -->
+    <!--    =====================  -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
@@ -36,7 +36,6 @@
         android:background="@drawable/button_shape"
         android:onClick="onClickStart"
         android:text="@string/main_btn_start"
-
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,5 +82,19 @@
         app:layout_constraintVertical_bias="0.050000012"
         style="@style/MainText"
         />
+
+    <TextView
+        android:id="@+id/safetyText"
+        style="@style/MainText_safety"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/main_text_safety"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/start"
+        app:layout_constraintVertical_bias="0.90999997" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

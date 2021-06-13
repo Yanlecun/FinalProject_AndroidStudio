@@ -6,6 +6,14 @@
 
     <string name="main_text_name">환영합니다!</string>
     <string name="main_btn_start">검색하기</string>
+    <string name="main_text_safety">안심식당 선정 조건이 궁금하신가요? (클릭)</string>
+    <string name="main_text_safety_alert">
+        \t 1. 종사자 마스크 착용 \n
+        \t 2. 손소독제 비치 및 주기적 소독 환기 \n
+        \t 3. 음식 덜어먹기 적극 실천 \n
+        \t 4. 위생적인 수저관리 \n
+        \t 5. 남은 음식 재사용 안하기 \n
+    </string>
 
     <string name="search_text_subject">경기도 안심식당 검색</string>
     <string name="search_btn_home">홈으로</string>

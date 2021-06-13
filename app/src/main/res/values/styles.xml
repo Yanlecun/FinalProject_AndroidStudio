@@ -64,4 +64,10 @@
         <item name="android:textColor">@color/color1</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <!--    1) 직접 코딩-->
+    <style name="MainText_safety">
+        <item name="android:textColor">@color/color6</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

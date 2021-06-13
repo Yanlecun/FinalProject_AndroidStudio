@@ -2,15 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.navermapapp">
 
+    <!-- 1) 전부 직접 코딩 (수업중 사용 코드 응용)-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-feature android:name="android.hardware.location.gps" />
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
     <uses-feature android:name="android.hardware.location.network" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- ======================================-->
 
     <application
         android:allowBackup="true"
@@ -20,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <!--  2) 출처 https://blog.naver.com/bb_/221645545193-->
+        <!--  2) 출처 https://blog.naver.com/bb_/221645545193 -->
+        <!-- android:usesCleartextTraffic="true" -->
 
         
         <activity android:name=".FirstActivity">
@@ -31,14 +30,17 @@
             </intent-filter>
         </activity>
 
+        <!-- 1) 전부 직접 코딩 (수업중 사용 코드 응용)-->
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="oqzjezkxwo" />
+        <!-- ======================================-->
 
         <!-- 2) 출처 : https://stackoverflow.com/questions/17148426/pop-up-keyboard-destroys-my-listview/17148669 -->
         <activity
             android:name=".RestaurantSearchActivity"
             android:windowSoftInputMode="adjustNothing" />
+        <!-- ======================================-->
         <activity android:name=".RestaurantInfoActivity" />
         <activity android:name=".MainActivity">
 

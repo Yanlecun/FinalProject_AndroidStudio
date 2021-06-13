@@ -33,6 +33,7 @@ public class RestaurantSearchActivity extends AppCompatActivity {
     // 1) 직접 코딩 - 변수설정
     private EditText mEditText ;
     private String insert_loc ;
+    private String mLatestText;  // 최근 검색을 통해서 받아온 텍스트
     private ListView mListView ;
     private SimpleAdapter mSimpleAdapter;
     private ArrayList<HashMap<String,String>> mListData;
@@ -43,7 +44,6 @@ public class RestaurantSearchActivity extends AppCompatActivity {
     // 검색 결과 여부
     // 1) 직접 코딩
     private boolean isHavingResult = true;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +52,6 @@ public class RestaurantSearchActivity extends AppCompatActivity {
         // 1) 직접 코딩
         mListData = new ArrayList<>();
         mListRest = new ArrayList<>();
-
         mEditText = findViewById(R.id.searchText1);
 
         // 1) 직접 코딩 (수업 중 사용 코드 응용)
@@ -70,18 +69,32 @@ public class RestaurantSearchActivity extends AppCompatActivity {
                     // 결괏값이 있을 경우
                     // 1) 직접 코딩
                     if(isHavingResult) {
+                        // 1) 직접 코딩
                         Intent it = new Intent(getApplicationContext(), RestaurantInfoActivity.class);
+                        // 1) 직접 코딩
                         Restaurant res = mListRest.get(position);
 
                         // 2) 출처 : https://stackoverflow.com/questions/7181526/how-can-i-make-my-custom-objects-parcelable
                         it.putExtra("restaurant",new Restaurant(res.getAddress(), res.getName(), res.getCall(), res.getGubun(), res.getGubunDetail()));
-
-                        startActivityForResult(it,200);
+                        // 1) 직접 코딩
+                        startActivity(it);
                     }
                 }
             }
         });
+        // 1) 직접 코딩
+        Intent it = getIntent();
+        mLatestText = it.getStringExtra("search_text");
 
+        // 1) 직접 코딩
+        if(mLatestText != null && !mLatestText.isEmpty()) {
+            mEditText.setText(mLatestText);
+            insert_loc = mLatestText;
+            connectRestaurantsDB();
+            mEditText.setText("");
+            mListView.clearChoices();
+            mListView.setSelection(0);
+        }
     }
 
 
@@ -138,6 +151,7 @@ public class RestaurantSearchActivity extends AppCompatActivity {
             protected void thenDoUiRelatedWork(String s) {
                 // 1) 직접 코딩
                 JsonObject jsonObject1 = (JsonObject)JsonParser.parseString(s);
+                // 1) 직접 코딩
                 JsonObject jsonObject2 = (JsonObject)jsonObject1.get("Grid_20200713000000000605_1");
 
                 // 빈 칸으로 입력했을 경우확인 -> 잘못입력했을 경우확인
@@ -213,6 +227,9 @@ public class RestaurantSearchActivity extends AppCompatActivity {
 
     // 1) 직접 코딩
     public void onClickHome(View v) {
+        Intent it = getIntent();
+        it.putExtra("search_text", insert_loc);
+        setResult(RESULT_OK,it);
         finish();
     }
 
