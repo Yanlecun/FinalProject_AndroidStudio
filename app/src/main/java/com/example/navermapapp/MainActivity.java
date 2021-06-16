@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    // 1) 직접코딩
     TextView mTv ;
     String searchText;
 

@@ -159,6 +159,7 @@ public class RestaurantSearchActivity extends AppCompatActivity {
                 if(jsonObject2 == null || jsonObject2.get("totalCnt").toString().equals("0")) {
                     if(!mListData.isEmpty()) {
                         mListData.removeAll(mListData);
+                        // 1) 직접 코딩
                     }
 
                     // 1) 직접 코딩
@@ -171,8 +172,7 @@ public class RestaurantSearchActivity extends AppCompatActivity {
 
                     // 1) 직접 코딩
                     mListData.add(hitem);
-                    // 1) 직접 코딩
-                    mSimpleAdapter.notifyDataSetChanged();
+
                     return ;
                 }
                 // 1) 직접 코딩
@@ -188,7 +188,9 @@ public class RestaurantSearchActivity extends AppCompatActivity {
                 if(!mListData.isEmpty()) {
                     mListData.removeAll(mListData);
                     mListRest.removeAll(mListRest);
+                    // 1) 직접 코딩
                 }
+                isHavingResult = true;
                 for(int i =0; i < restaurants.size(); i++) {
                     // 1) 직접 코딩
                     JsonObject restaurant = (JsonObject)restaurants.get(i);

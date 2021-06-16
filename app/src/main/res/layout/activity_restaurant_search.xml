@@ -16,15 +16,15 @@
     <ListView
         android:id="@+id/list"
         android:layout_width="0dp"
-        android:layout_height="433dp"
+        android:layout_height="687dp"
         android:layout_marginTop="8dp"
 
         android:choiceMode="singleChoice"
         android:divider="#ad235e"
         android:dividerHeight="1dp"
         android:fastScrollEnabled="true"
-        android:scrollbarAlwaysDrawVerticalTrack="true"
 
+        android:scrollbarAlwaysDrawVerticalTrack="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

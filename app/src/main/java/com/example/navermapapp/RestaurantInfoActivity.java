@@ -75,11 +75,11 @@ public class RestaurantInfoActivity extends FragmentActivity implements OnMapRea
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {
         mNaverMap = naverMap;
-        mNaverMap.setSymbolScale(1f); //지도상에 보여지는 symbol scale (표준 크기)
-        mNaverMap.setMapType(NaverMap.MapType.Basic);  // 지도 타입
-        mNaverMap.moveCamera(CameraUpdate.zoomTo(15)); // 얼마만큼 확대 축소 할 것인지 ?
+        mNaverMap.setSymbolScale(1f);
+        mNaverMap.setMapType(NaverMap.MapType.Basic);
+        mNaverMap.moveCamera(CameraUpdate.zoomTo(15));
 
-        mNaverMap.moveCamera(CameraUpdate.scrollTo(latLng)); //시작 지점
+        mNaverMap.moveCamera(CameraUpdate.scrollTo(latLng));
         // 인자로 위치 넣어서 지도 위치 변경하기
         // 1) 직접 코딩
         setMapPos(name);
@@ -119,7 +119,6 @@ public class RestaurantInfoActivity extends FragmentActivity implements OnMapRea
         marker.setCaptionText(name);
         marker.setCaptionOffset(-215);
         marker.setCaptionTextSize(15);
-
         mNaverMap.moveCamera(CameraUpdate.scrollTo(latLng)); // 드래그로 이동 가능하도록 하기
 
     }
