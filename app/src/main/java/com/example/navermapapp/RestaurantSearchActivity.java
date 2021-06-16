@@ -172,6 +172,7 @@ public class RestaurantSearchActivity extends AppCompatActivity {
 
                     // 1) 직접 코딩
                     mListData.add(hitem);
+                    mSimpleAdapter.notifyDataSetChanged();
 
                     return ;
                 }
